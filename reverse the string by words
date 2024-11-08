@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	string a;
+	getline(cin, a);
+    stack<string>stack;
+    string s="";
+    string g="";
+    for(int i=0;i<a.size();i++)
+    {
+        if(a[i]!=' ')
+        {
+            s+=a[i];
+        }
+        else if (s!=""){
+            stack.push(s);  
+            s = "";         
+        }
+    }
+    while (!stack.empty())
+    {
+        string t=stack.top();
+            g+=t;
+            g+=' ';
+            stack.pop();
+    }
+    if (!stack.empty()) {
+            g += " ";
+    }
+    cout<<g<<endl;
+    return 0;
+}
+    
